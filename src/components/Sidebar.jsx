@@ -1,6 +1,6 @@
 import { files } from "../data/portfolio";
 import { fileIcons, BranchIcon } from "./icons";
-import { downloadResume } from "../lib/resume";
+import { openResume } from "../lib/resume";
 
 export default function Sidebar({
   activeFile,
@@ -9,8 +9,8 @@ export default function Sidebar({
   onToggleCopilot,
 }) {
   const click = (f) => {
-    if (f.download) {
-      downloadResume();
+    if (f.external) {
+      openResume();
       return;
     }
     onFileClick(f.id);
@@ -28,26 +28,26 @@ export default function Sidebar({
       <div className="flex-1 overflow-y-auto thin-scroll pb-2">
         {files.map((f) => {
           const Icon = fileIcons[f.id];
-          const active = activeFile === f.id && !f.download;
-          const isDownload = !!f.download;
+          const active = activeFile === f.id && !f.external;
+          const isExternal = !!f.external;
           return (
             <button
               key={f.id}
               onClick={() => click(f)}
-              title={isDownload ? "Download Resume PDF ↓" : f.name}
+              title={isExternal ? "Open Resume PDF in a new tab ↗" : f.name}
               className={`w-full flex items-center gap-2 px-4 py-[5px] text-xs cursor-pointer border-l-2 transition-all duration-100 group ${
                 active
                   ? "bg-white/[0.07] text-vscode-bright border-vscode-blue2"
-                  : isDownload
+                  : isExternal
                     ? "text-vscode-dim border-transparent hover:bg-white/[0.05] hover:text-[#f44336] hover:border-[#f44336]"
                     : "text-vscode-dim border-transparent hover:bg-white/[0.05] hover:text-vscode-text"
               }`}
             >
               <span className="flex-shrink-0">{Icon && <Icon />}</span>
               <span className="truncate flex-1 text-left">{f.name}</span>
-              {isDownload && (
+              {isExternal && (
                 <span className="text-[11px] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
-                  ↓
+                  ↗
                 </span>
               )}
             </button>

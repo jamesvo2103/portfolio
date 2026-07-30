@@ -106,13 +106,15 @@ Stack: \`${job.tags.join("` · `")}\``;
 };
 
 const resumeAnswer = () =>
-  `You can grab the PDF a few ways:
+  `The PDF opens in a new browser tab — a few ways to get there:
 
 ${bulletList([
   "Click **Hieu_Vo_Resume.pdf** in the explorer sidebar",
-  "Use the **download icon** in the activity bar on the left",
-  "**File → Download Resume** in the menu bar",
-])}`;
+  "Use the **document icon** in the activity bar on the left",
+  "**File → View Resume** in the menu bar",
+])}
+
+Your browser can still save it from there if you want a local copy.`;
 
 const RULES = [
   {

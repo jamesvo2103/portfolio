@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { files, profile } from "../data/portfolio";
 import { fileIcons, BranchIcon, GithubIcon, LinkedinIcon, MailIcon } from "./icons";
 import { themes } from "../hooks";
-import { downloadResume } from "../lib/resume";
+import { openResume } from "../lib/resume";
 
 const SHORTCUTS = [
   ["Ctrl+P", "Command palette"],
@@ -76,8 +76,8 @@ export default function MobileDrawer({
   }, [onClose]);
 
   const pick = (f) => {
-    if (f.download) {
-      downloadResume();
+    if (f.external) {
+      openResume();
       onClose();
       return;
     }
@@ -162,8 +162,8 @@ export default function MobileDrawer({
               <div className="pb-2">
                 {files.map((f) => {
                   const Icon = fileIcons[f.id];
-                  const active = activeFile === f.id && !f.download;
-                  const isDownload = !!f.download;
+                  const active = activeFile === f.id && !f.external;
+                  const isExternal = !!f.external;
                   return (
                     <button
                       key={f.id}
@@ -186,7 +186,7 @@ export default function MobileDrawer({
                           ●
                         </span>
                       )}
-                      {isDownload && <span className="text-[11px]">↓</span>}
+                      {isExternal && <span className="text-[11px]">↗</span>}
                     </button>
                   );
                 })}

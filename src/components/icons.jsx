@@ -184,7 +184,8 @@ export const GearIcon = ({ size = 22, width = "1.4" }) => (
   </svg>
 );
 
-export const DownloadIcon = () => (
+/** Document with an out-arrow — opens the résumé in a new tab. */
+export const FileIcon = () => (
   <svg
     width="20"
     height="20"
@@ -195,10 +196,10 @@ export const DownloadIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
     <polyline points="14 2 14 8 20 8" />
-    <line x1="12" y1="11" x2="12" y2="17" />
-    <polyline points="9 14 12 17 15 14" />
+    <line x1="11" y1="15" x2="20" y2="6" />
+    <polyline points="15 5.5 20.5 5.5 20.5 11" />
   </svg>
 );
 

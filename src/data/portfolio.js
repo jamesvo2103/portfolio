@@ -43,14 +43,15 @@ export const files = [
     name: "Hieu_Vo_Resume.pdf",
     folder: "root",
     lang: "PDF",
-    download: true,
+    // Opens in a new browser tab rather than rendering as an editor view.
+    external: true,
   },
 ];
 
 export const fileNames = files.map((f) => f.name);
 
 export const nameToId = files.reduce((acc, f) => {
-  if (!f.download) acc[f.name] = f.id;
+  if (!f.external) acc[f.name] = f.id;
   return acc;
 }, {});
 

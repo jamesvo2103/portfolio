@@ -5,12 +5,12 @@ import {
   SearchIcon,
   BranchIcon,
   GearIcon,
-  DownloadIcon,
+  FileIcon,
   SparkleIcon,
 } from "./icons";
 import { themes } from "../hooks";
 import { profile } from "../data/portfolio";
-import { downloadResume } from "../lib/resume";
+import { openResume } from "../lib/resume";
 
 const SHORTCUTS = [
   ["Ctrl P", "Go to file (command palette)"],
@@ -86,10 +86,10 @@ export default function ActivityBar({
     },
     {
       icon: "📄",
-      label: "Download Resume",
+      label: "View Resume",
       hint: "",
       action: () => {
-        downloadResume();
+        openResume();
         setSetOpen(false);
       },
     },
@@ -174,11 +174,7 @@ export default function ActivityBar({
         </Flyout>
       </div>
 
-      <ActBtn
-        icon={<DownloadIcon />}
-        title="Download Resume"
-        onClick={downloadResume}
-      />
+      <ActBtn icon={<FileIcon />} title="View Resume" onClick={openResume} />
       <ActBtn
         icon={<SparkleIcon />}
         title="Hieu's Copilot Chat"

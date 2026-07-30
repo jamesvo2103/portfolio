@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Dropdown, MenuItem, MenuSep, MenuLabel } from "./Menu";
 import { files, profile } from "../data/portfolio";
-import { downloadResume } from "../lib/resume";
+import { openResume } from "../lib/resume";
 
 const BTN =
   "px-2 py-0.5 rounded text-xs text-vscode-text cursor-pointer hover:bg-white/[0.08] transition-colors select-none";
@@ -94,7 +94,7 @@ export default function MenuBar({
             />
           ))}
           <MenuSep />
-          <MenuItem label="Download Resume" onClick={() => run(downloadResume)} />
+          <MenuItem label="View Resume ↗" onClick={() => run(openResume)} />
         </Dropdown>
       </div>
 
