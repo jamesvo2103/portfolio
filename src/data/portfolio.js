@@ -11,7 +11,7 @@ export const profile = {
   // Shown in the hero avatar. Set to null to fall back to the initials.
   avatar: "/profile.jpg",
   initials: "HV",
-  role: "Software Engineer Intern @ BriteAI",
+  role: "Software Engineer Intern @ Sharedi.io",
   location: "Villanova, PA 🇺🇸",
   phone: "(484) 588-8415",
   email: "vongochieu2103@gmail.com",
@@ -61,13 +61,13 @@ export const education = [
     institution: "Villanova University",
     university: "College of Engineering · Villanova, PA",
     degree: "B.S. in Computer Engineering",
-    minor: "Minor: Computer Science & Cybersecurity",
+    minor: "Minor: Computer Science",
     gpa: "GPA: 3.6 / 4.0",
     period: "2024 – May 2028",
     location: "Villanova, PA",
     icon: "🎓",
     extra:
-      "Coursework: Analysis of Algorithms, Database Systems, Computer Networks, Web & Mobile Design, C++ Algorithms and Data Structures, Discrete Structures, Digital Systems, Signal Processing",
+      "Coursework: Data Structures & Algorithms, Web & Mobile Dev, Database Systems, Computer Architecture, Operating Systems, Computer Networks, Network Security, Signal Processing",
   },
   {
     id: 2,
@@ -83,12 +83,24 @@ export const education = [
 export const projects = [
   {
     id: 0,
+    icon: "🧠",
+    accent: "#c586c0",
+    type: "Backend · Go · Developer Tools",
+    name: "AI Coding Memory System",
+    desc: "Persistent Go daemon and PostgreSQL backend that gives AI coding tools memory across sessions, using pgx connection pooling to serve multiple clients without per-command database initialization. PostgreSQL full-text search with weighted indexing and relevance ranking returns results with sub-second latency while capping retrieved context at 2,000 tokens. Automated PostgreSQL setup, Docker Compose startup, and migrations bring local setup under 5 minutes, with generated credentials and secure config permissions.",
+    tags: ["Go", "PostgreSQL", "pgx", "Docker Compose", "golang-migrate"],
+    link: "https://github.com/jamesvo2103",
+    period: "2026",
+  },
+  {
+    id: 1,
     icon: "🩺",
     accent: "#4ec9b0",
     type: "Full Stack · Multi-Agent AI · Winner",
-    name: "ClinSync — RevolutionUC Winner",
-    desc: "Clinical trial recruitment platform built with FastAPI, MongoDB, and React.js, orchestrating multi-agent AI workflows for automated eligibility screening and cutting patient–trial matching latency by 50%. Moved OCR client-side with Tesseract.js, dropping backend compute 15% and server-side exposure of sensitive health documents by 99%. Retrieval and reasoning run on ChromaDB + LangChain/LangGraph with Gemini-powered agents, improving trial-matching accuracy 20%.",
+    name: "ClinSync — Clinical Trial Matching",
+    desc: "Clinical trial recruitment platform (RevolutionUC winner) built with Python, FastAPI, MongoDB, and React.js, orchestrating multi-agent AI workflows that cut patient–trial matching latency from 8s to 4s. Moved OCR client-side with Tesseract.js, replacing 5 MB patient-document uploads with 50 KB extracted-text payloads so raw documents never reach the backend. A retrieval and reasoning pipeline on ChromaDB + LangChain/LangGraph with Gemini-powered agents raised trial-matching accuracy from 65% to 78%.",
     tags: [
+      "Python",
       "FastAPI",
       "MongoDB",
       "React.js",
@@ -102,7 +114,7 @@ export const projects = [
     period: "2026",
   },
   {
-    id: 1,
+    id: 2,
     icon: "🔧",
     accent: "#ff9d4b",
     type: "Backend · Multi-Agent AI · Node.js",
@@ -113,7 +125,7 @@ export const projects = [
     period: "2025",
   },
   {
-    id: 2,
+    id: 3,
     icon: "📄",
     accent: "#4fc1ff",
     type: "Full Stack · Next.js · Client-Side AI",
@@ -138,6 +150,7 @@ export const skillGroups = [
     items: [
       { name: "Python", pct: 92, color: "#ff6fd8" },
       { name: "Java", pct: 88, color: "#f97316" },
+      { name: "Go", pct: 78, color: "#00add8" },
       { name: "C / C++", pct: 82, color: "#38bdf8" },
       { name: "JavaScript", pct: 84, color: "#facc15" },
       { name: "TypeScript", pct: 78, color: "#38bdf8" },
@@ -201,6 +214,7 @@ export const skillGroups = [
     group: "DevOps & Tools",
     items: [
       { name: "Docker", pct: 86, color: "#38bdf8" },
+      { name: "Linux", pct: 84, color: "#facc15" },
       { name: "Google Compute Engine", pct: 82, color: "#facc15" },
       { name: "Git / GitHub", pct: 92, color: "#f97316" },
       { name: "Maven", pct: 80, color: "#ef4444" },
@@ -220,6 +234,11 @@ export const skillGroups = [
 ];
 
 export const alsoFamiliar = [
+  "pgx",
+  "golang-migrate",
+  "Docker Compose",
+  "Tesseract.js",
+  "Full-Text Search",
   "Sentence Transformers",
   "HDBSCAN",
   "Pyodide",
@@ -236,6 +255,8 @@ export const alsoFamiliar = [
   "Signal Processing",
   "Digital Systems",
   "Computer Networks",
+  "Operating Systems",
+  "Network Security",
 ];
 
 export const experience = [
@@ -243,13 +264,13 @@ export const experience = [
     date: "May 2026 – Present",
     current: true,
     role: "Software Engineer Intern",
-    company: "BriteAI",
+    company: "Sharedi.io",
     location: "Mountain View, CA",
     bullets: [
-      "Built a notification service using Java, Spring Boot, CockroachDB, and WebSocket/STOMP, supporting 3 notification workflows across 2 delivery channels: real-time in-app updates and email.",
-      "Reduced RabbitMQ payload size by 93% (6 KB → 400 bytes/event) by sending events containing only IDs and metadata, while cutting preference lookups from 1,001 database queries to 2 for 1,000 subscribers.",
-      "Added an in-memory cache for unread notification counts, reducing count lookup time from 20–50 ms to under 5 ms.",
-      "Automated deployment of a Spring Boot service to Google Compute Engine, reducing deployment time by 75%, while securing internal APIs with HMAC-SHA256 and adding health checks for database pools and background workers.",
+      "Architected a distributed notification engine using Java, Spring Boot, and CockroachDB, supporting 100K concurrent users while delivering real-time in-app updates via WebSocket with STOMP and email.",
+      "Reduced RabbitMQ event payloads from 6 KB to 400 bytes by publishing only IDs and metadata, while batch-loading subscriber preferences to cut 1,001 database queries to 2 for 1,000 recipients.",
+      "Engineered a distributed Redis caching layer for unread notification aggregates, cutting read latencies from 20–50 ms to under 5 ms under high concurrency.",
+      "Automated deployment of the Spring Boot service to Google Compute Engine and added HMAC authentication, idempotent event processing, and service health checks.",
     ],
     tags: [
       "Java",
@@ -257,8 +278,8 @@ export const experience = [
       "CockroachDB",
       "WebSocket/STOMP",
       "RabbitMQ",
+      "Redis",
       "Google Compute Engine",
-      "HMAC-SHA256",
     ],
   },
   {
@@ -268,34 +289,25 @@ export const experience = [
     company: "Media Landscape (MeLa) Lab",
     location: "Villanova, PA",
     bullets: [
-      "Built a Django REST and PostgreSQL analytics platform over 40M+ news articles, letting researchers compare coverage, temporal, linguistic, and stylistic media bias across 500+ outlets; optimized indexes to cut query latency 40% (2.5s → 1.5s).",
-      "Architected an NLP pipeline using Kafka, Celery, and Redis, dividing workloads across parallel workers to increase throughput 4x (15K → 60K+ articles/day) and reduce batch processing time 80% (5h → 1h).",
-      "Engineered 10+ automated Python data pipelines using spaCy and NLTK to process 60K+ articles daily from 500+ outlets, enabling high-volume feature extraction and analytics via 10 API endpoints.",
-      "Built a BERTopic pipeline using Sentence Transformers, UMAP, and HDBSCAN to identify 17+ major news topics from 50K articles and enable scalable topic assignment across a 40M+ article corpus.",
+      "Built a Django REST and PostgreSQL analytics platform over 40M news articles, enabling researchers to compare media bias across 500+ outlets; optimized database indexes to reduce query latency from 2.5 to 1.5 seconds.",
+      "Implemented a Kafka-based NLP pipeline with parallel Python workers, increasing ingestion from 15K to 60K articles/day and reducing batch processing time from 5 hours to 1 hour.",
+      "Developed 10 automated Python data pipelines to process 60K articles daily from 500 outlets, transforming raw article data into structured features exposed through 10 REST API endpoints.",
+      "Built a BERTopic-based processing pipeline over 50K articles to identify major news themes and support automated topic assignment across a 40M-article corpus for downstream analytics.",
     ],
-    tags: [
-      "Django REST",
-      "PostgreSQL",
-      "Kafka",
-      "Celery",
-      "Redis",
-      "spaCy",
-      "NLTK",
-      "BERTopic",
-    ],
+    tags: ["Django REST", "PostgreSQL", "Kafka", "Python", "BERTopic", "NLP"],
   },
   {
     date: "Jun 2025 – Jul 2025",
     current: false,
     role: "Software Engineer Intern",
     company: "L3Harris Technologies",
-    location: "Villanova, PA",
+    location: "Bryn Mawr, PA",
     bullets: [
-      "Engineered a high-throughput image-processing pipeline using Python and OpenCV to convert 4K+ wind tunnel videos into 12K+ paired training images for an AI-based airfoil screening system.",
-      "Improved compute efficiency through LoRA fine-tuning, adaptive batch sizing, and GPU memory footprint optimization, reducing training time 80% (10h → 2h) and infrastructure cost 70%.",
-      "Launched an AI-driven aerodynamic screening service using FastAPI, MySQL, React, and Docker CI/CD, providing scalable on-demand airflow predictions and enabling 98% faster design iteration.",
+      "Engineered a high-throughput image-processing workflow using Python and OpenCV to convert 4K wind tunnel videos into 12K paired training images for an AI-based airfoil screening system.",
+      "Optimized a GPU-based model training pipeline through adaptive batch sizing and memory management, reducing training time from 10 hours to 2 hours.",
+      "Developed a containerized aerodynamic screening service using FastAPI, MySQL, and Docker, exposing model predictions through backend APIs for on-demand airfoil evaluation.",
     ],
-    tags: ["Python", "OpenCV", "LoRA", "FastAPI", "MySQL", "React", "Docker"],
+    tags: ["Python", "OpenCV", "FastAPI", "MySQL", "Docker"],
   },
 ];
 
@@ -306,10 +318,10 @@ export const heroStats = [
 ];
 
 export const readmeStack = [
-  ["Languages", ["Python", "Java", "C/C++", "TypeScript", "SQL"]],
+  ["Languages", ["Python", "Java", "Go", "C/C++", "TypeScript", "SQL"]],
   ["Backend", ["Spring Boot", "FastAPI", "Django REST", "Express.js"]],
-  ["Data", ["PostgreSQL", "CockroachDB", "MongoDB", "Redis", "Kafka"]],
-  ["DevOps", ["Docker", "GCE", "Maven", "Flyway", "Git"]],
+  ["Data", ["PostgreSQL", "CockroachDB", "MongoDB", "Redis", "Kafka", "RabbitMQ"]],
+  ["DevOps", ["Docker", "GCE", "Linux", "Git"]],
 ];
 
 export const readmeBadges = [
@@ -321,8 +333,8 @@ export const readmeBadges = [
 ];
 
 export const aboutFocus = [
-  ["🔭", "Building notification & delivery system at BriteAI"],
-  ["🧠", "NLP pipelines over 40M+ document corpora"],
+  ["🔭", "Building a distributed notification engine at Sharedi.io"],
+  ["🧠", "NLP pipelines over a 40M-article corpus"],
   ["🌱", "Currently exploring distributed systems & MLOps"],
   ["💬", "Talk to me about Java, Spring Boot, Python, APIs"],
   ["⚡", "Obsessed with latency, payload size, and query counts"],
@@ -331,7 +343,7 @@ export const aboutFocus = [
 
 export const gitLog = [
   "a3f1c2e (HEAD → main) feat: cut RabbitMQ payload 6KB → 400B",
-  "b7d4a1f perf: cache unread counts, 20-50ms → <5ms",
+  "b7d4a1f perf: Redis cache for unread counts, 20-50ms → <5ms",
   "d1f8c4a chore: automate Spring Boot deploy to GCE",
-  "e2a0b5c feat: Kafka + Celery workers, 15K → 60K articles/day",
+  "e2a0b5c feat: Kafka NLP workers, 15K → 60K articles/day",
 ];

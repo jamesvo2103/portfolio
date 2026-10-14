@@ -1,9 +1,9 @@
 import { profile, readmeStack, readmeBadges } from "../../data/portfolio";
 
 const HIGHLIGHTS = [
-  ["🔭", "Building", "notification & delivery infrastructure", "at BriteAI"],
-  ["🧠", "NLP pipelines over a 40M+ article corpus", "", ""],
-  ["⚡", "Cut", "RabbitMQ payloads by 93% and training time by 80%", ""],
+  ["🔭", "Building", "a distributed notification engine", "at Sharedi.io"],
+  ["🧠", "NLP pipelines over a 40M-article corpus", "", ""],
+  ["⚡", "Cut", "RabbitMQ payloads 6 KB → 400 B and training time 10h → 2h", ""],
   ["✨", "Always learning, always shipping", "", ""],
 ];
 

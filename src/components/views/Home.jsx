@@ -86,7 +86,7 @@ export default function Home({ onNavigate }) {
           ))}
           <div className="chip-accent inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-sm">
             <span className="w-[7px] h-[7px] rounded-full bg-vscode-pink flex-shrink-0" />
-            @ BriteAI
+            @ Sharedi.io
           </div>
         </div>
 

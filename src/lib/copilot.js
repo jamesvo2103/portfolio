@@ -14,13 +14,13 @@ const bulletList = (items) => items.map((i) => `- ${i}`).join("\n");
 const intro = () =>
   `**${profile.firstName} ${profile.lastName}** — ${profile.role}, based in ${profile.location}.
 
-He's a Computer Engineering student at Villanova University (minor in Computer Science & Cybersecurity, GPA 3.6) graduating **May 2028**, and he's done three software engineering internships so far.
+He's a Computer Engineering student at Villanova University (minor in Computer Science, GPA 3.6) graduating **May 2028**, and he's done three software engineering internships so far.
 
 What he actually works on:
 ${bulletList([
-  "**Backend services** — Java/Spring Boot, FastAPI, Django REST, Express",
-  "**Distributed data pipelines** — Kafka, Celery, RabbitMQ, Redis",
-  "**Applied ML/NLP** — spaCy, NLTK, BERTopic, PyTorch, OpenCV",
+  "**Backend services** — Java/Spring Boot, Go, FastAPI, Django REST",
+  "**Distributed data pipelines** — Kafka, RabbitMQ, Redis",
+  "**Applied ML/NLP** — BERTopic, PyTorch, OpenCV, LangChain/LangGraph",
 ])}
 
 Ask me about his experience, projects, tech stack, or how to reach him.`;
@@ -84,14 +84,14 @@ const impactAnswer = () =>
   `Some numbers he's shipped:
 
 ${bulletList([
-  "**93%** smaller RabbitMQ payloads (6 KB → 400 bytes/event)",
+  "**6 KB → 400 bytes** RabbitMQ event payloads",
   "**1,001 → 2** database queries for 1,000-subscriber preference lookups",
-  "**20–50 ms → <5 ms** unread-notification count lookups (in-memory cache)",
-  "**75%** faster deployments (automated Spring Boot → Google Compute Engine)",
-  "**4x** NLP throughput (15K → 60K+ articles/day via Kafka + Celery + Redis)",
-  "**80%** shorter batch processing (5h → 1h) and **40%** lower query latency (2.5s → 1.5s)",
-  "**80%** shorter GPU training (10h → 2h) and **70%** lower infra cost via LoRA fine-tuning",
-  "**98%** faster design iteration on the L3Harris airfoil screening service",
+  "**20–50 ms → <5 ms** unread-notification reads (distributed Redis cache)",
+  "**100K** concurrent users on the Sharedi.io notification engine",
+  "**4x** NLP throughput (15K → 60K articles/day via Kafka + parallel Python workers)",
+  "**5h → 1h** batch processing and **2.5s → 1.5s** query latency at MeLa Lab",
+  "**10h → 2h** GPU training via adaptive batch sizing and memory management",
+  "**8s → 4s** patient–trial matching and **65% → 78%** matching accuracy on ClinSync",
 ])}`;
 
 const currentAnswer = () => {
@@ -118,10 +118,10 @@ Your browser can still save it from there if you want a local copy.`;
 
 const RULES = [
   {
-    keys: ["experience", "work", "intern", "job", "career", "employ", "britea", "mela", "l3harris", "harris"],
+    keys: ["experience", "work", "intern", "job", "career", "employ", "sharedi", "britea", "mela", "l3harris", "harris"],
     answer: experienceAnswer,
   },
-  { keys: ["project", "built", "build", "clinsync", "fixbuddy", "hackathon", "ship"], answer: projectsAnswer },
+  { keys: ["project", "built", "build", "clinsync", "clinical", "memory", "fixbuddy", "hackathon", "ship"], answer: projectsAnswer },
   {
     keys: ["skill", "stack", "tech", "language", "framework", "tool", "know", "database", "kafka", "spring", "python", "java"],
     answer: skillsAnswer,
@@ -144,7 +144,7 @@ const FALLBACK = `I answer from ${profile.firstName}'s résumé, so I'm best on 
 
 ${bulletList([
   "**Experience** — his three internships and what he built at each",
-  "**Projects** — ClinSync and FixBuddy",
+  "**Projects** — AI Coding Memory System, ClinSync, and more",
   "**Skills** — languages, backend, data, ML, DevOps",
   "**Education** — Villanova, coursework, honors",
   "**Impact** — the concrete numbers he moved",

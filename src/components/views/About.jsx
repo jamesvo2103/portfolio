@@ -27,12 +27,12 @@ export default function About() {
             distributed data pipelines
           </strong>
           , and <strong className="text-vscode-blue font-medium">applied ML</strong>. So
-          far that's meant a notification service on Java + Spring Boot + CockroachDB, an
+          far that's meant a distributed notification engine on Java + Spring Boot + CockroachDB, an
           NLP platform chewing through a{" "}
           <strong className="text-vscode-blue font-medium">40M+ article corpus</strong>,
           and a GPU training pipeline I cut from 10 hours to 2. Currently a{" "}
           <strong className="text-vscode-blue font-medium">
-            Software Engineer Intern at BriteAI
+            Software Engineer Intern at Sharedi.io
           </strong>{" "}
           in Mountain View, CA.
         </p>
