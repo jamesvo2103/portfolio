@@ -17,24 +17,23 @@ export default function About() {
       </p>
 
       <div className="reveal bg-white/[0.025] border border-vscode-border rounded p-6 mb-4">
-        <p className="text-[13px] text-vscode-dim leading-[1.9]">
-          Hi! I'm <strong className="text-vscode-blue font-medium">Hieu Vo</strong>, a
+        <p className="text-[13px] text-vscode-dim leading-[1.9] mb-3">
+          I'm <strong className="text-vscode-blue font-medium">Hieu (James) Vo</strong>, a
           Computer Engineering student at{" "}
           <strong className="text-vscode-blue font-medium">Villanova University</strong>{" "}
-          who spends most of his time on{" "}
-          <strong className="text-vscode-blue font-medium">backend systems</strong>,{" "}
-          <strong className="text-vscode-blue font-medium">
-            distributed data pipelines
-          </strong>
-          , and <strong className="text-vscode-blue font-medium">applied ML</strong>. So
-          far that's meant a distributed notification engine on Java + Spring Boot + CockroachDB, an
-          NLP platform chewing through a{" "}
-          <strong className="text-vscode-blue font-medium">40M+ article corpus</strong>,
-          and a GPU training pipeline I cut from 10 hours to 2. Currently a{" "}
-          <strong className="text-vscode-blue font-medium">
-            Software Engineer Intern at Sharedi.io
-          </strong>{" "}
-          in Mountain View, CA.
+          passionate about software engineering.
+        </p>
+        <p className="text-[13px] text-vscode-dim leading-[1.9] mb-3">
+          My experience spans{" "}
+          <strong className="text-vscode-blue font-medium">backend engineering</strong>,{" "}
+          <strong className="text-vscode-blue font-medium">distributed systems</strong>,{" "}
+          <strong className="text-vscode-blue font-medium">AI/ML</strong>, data
+          infrastructure, web development, and research, and I'm driven by the challenge of
+          turning complex ideas into scalable, reliable, and impactful products.
+        </p>
+        <p className="text-[13px] text-vscode-dim leading-[1.9]">
+          I aim to grow as a software engineer who contributes to innovative technologies
+          that improve how people live and work.
         </p>
       </div>
 

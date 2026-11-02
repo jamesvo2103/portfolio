@@ -61,13 +61,13 @@ export const education = [
     institution: "Villanova University",
     university: "College of Engineering · Villanova, PA",
     degree: "B.S. in Computer Engineering",
-    minor: "Minor: Computer Science",
+    minor: "Minor: Computer Science and Artificial Intelligence",
     gpa: "GPA: 3.6 / 4.0",
     period: "2024 – May 2028",
     location: "Villanova, PA",
     icon: "🎓",
     extra:
-      "Coursework: Data Structures & Algorithms, Web & Mobile Dev, Database Systems, Computer Architecture, Operating Systems, Computer Networks, Network Security, Signal Processing",
+      "Coursework: Data Structures & Algorithms, Web & Mobile Dev, Database Systems, Computer Architecture, Operating Systems, Applied Machine Learning, Computer Networks, Network Security, Signal Processing",
   },
   {
     id: 2,
@@ -97,7 +97,7 @@ export const projects = [
     icon: "🩺",
     accent: "#4ec9b0",
     type: "Full Stack · Multi-Agent AI · Winner",
-    name: "ClinSync — Clinical Trial Matching",
+    name: "ClinSync — Clinical Trial Matching Platform",
     desc: "Clinical trial recruitment platform (RevolutionUC winner) built with Python, FastAPI, MongoDB, and React.js, orchestrating multi-agent AI workflows that cut patient–trial matching latency from 8s to 4s. Moved OCR client-side with Tesseract.js, replacing 5 MB patient-document uploads with 50 KB extracted-text payloads so raw documents never reach the backend. A retrieval and reasoning pipeline on ChromaDB + LangChain/LangGraph with Gemini-powered agents raised trial-matching accuracy from 65% to 78%.",
     tags: [
       "Python",
