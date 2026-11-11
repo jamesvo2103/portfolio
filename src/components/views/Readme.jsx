@@ -3,7 +3,7 @@ import { profile, readmeStack, readmeBadges } from "../../data/portfolio";
 const HIGHLIGHTS = [
   ["🔭", "Building", "a distributed notification engine", "at Sharedi.io"],
   ["🧠", "NLP pipelines over a 40M-article corpus", "", ""],
-  ["⚡", "Cut", "RabbitMQ payloads 6 KB → 400 B and training time 10h → 2h", ""],
+  ["⚡", "Cut", "unread-count latency by 90% and training time 10h → 2h", ""],
   ["✨", "Always learning, always shipping", "", ""],
 ];
 

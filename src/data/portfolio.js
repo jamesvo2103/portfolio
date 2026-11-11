@@ -214,6 +214,7 @@ export const skillGroups = [
     group: "DevOps & Tools",
     items: [
       { name: "Docker", pct: 86, color: "#38bdf8" },
+      { name: "Google App Engine", pct: 80, color: "#4285f4" },
       { name: "Linux", pct: 84, color: "#facc15" },
       { name: "Google Compute Engine", pct: 82, color: "#facc15" },
       { name: "Git / GitHub", pct: 92, color: "#f97316" },
@@ -245,6 +246,9 @@ export const alsoFamiliar = [
   "PyPDF2",
   "Cerebras API",
   "Server-Side Rendering",
+  "Redis Pub/Sub",
+  "Priority Queues",
+  "Idempotent Processing",
   "HMAC-SHA256",
   "Postman",
   "CI/CD",
@@ -267,19 +271,20 @@ export const experience = [
     company: "Sharedi.io",
     location: "Mountain View, CA",
     bullets: [
-      "Architected a distributed notification engine using Java, Spring Boot, and CockroachDB, supporting 100K concurrent users while delivering real-time in-app updates via WebSocket with STOMP and email.",
-      "Reduced RabbitMQ event payloads from 6 KB to 400 bytes by publishing only IDs and metadata, while batch-loading subscriber preferences to cut 1,001 database queries to 2 for 1,000 recipients.",
-      "Engineered a distributed Redis caching layer for unread notification aggregates, cutting read latencies from 20–50 ms to under 5 ms under high concurrency.",
-      "Automated deployment of the Spring Boot service to Google Compute Engine and added HMAC authentication, idempotent event processing, and service health checks.",
+      "Architected a distributed notification engine using Java, Spring Boot, Kafka, and CockroachDB, supporting 100K concurrent users across independently scalable services.",
+      "Built Kafka event pipelines processing 5K events per sec, leveraging priority queues and parallel consumers to distribute notifications across email, SMS, and in-app channels for up to 500 recipients per event.",
+      "Engineered a distributed Redis caching and Pub/Sub layer, reducing unread notifications count lookup latency by 90% and delivering 95% of notifications within 200 ms via WebSocket on Compute Engine.",
+      "Deployed Docker-containerized microservices on Google Cloud App Engine, recovering from crashes in under 30 seconds and preventing message loss and duplicates through Kafka consumer replay and idempotent processing.",
     ],
     tags: [
       "Java",
       "Spring Boot",
+      "Kafka",
       "CockroachDB",
-      "WebSocket/STOMP",
-      "RabbitMQ",
-      "Redis",
-      "Google Compute Engine",
+      "Redis Pub/Sub",
+      "WebSocket",
+      "Docker",
+      "Google Cloud",
     ],
   },
   {
@@ -342,8 +347,8 @@ export const aboutFocus = [
 ];
 
 export const gitLog = [
-  "a3f1c2e (HEAD → main) feat: cut RabbitMQ payload 6KB → 400B",
-  "b7d4a1f perf: Redis cache for unread counts, 20-50ms → <5ms",
-  "d1f8c4a chore: automate Spring Boot deploy to GCE",
+  "a3f1c2e (HEAD → main) feat: Kafka event pipeline, 5K events/sec",
+  "b7d4a1f perf: Redis cache + Pub/Sub, unread-count lookups -90%",
+  "d1f8c4a chore: deploy Docker microservices to App Engine",
   "e2a0b5c feat: Kafka NLP workers, 15K → 60K articles/day",
 ];

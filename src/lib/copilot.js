@@ -14,7 +14,7 @@ const bulletList = (items) => items.map((i) => `- ${i}`).join("\n");
 const intro = () =>
   `**${profile.firstName} ${profile.lastName}** — ${profile.role}, based in ${profile.location}.
 
-He's a Computer Engineering student at Villanova University (minor in Computer Science, GPA 3.6) graduating **May 2028**, and he's done three software engineering internships so far.
+He's a Computer Engineering student at Villanova University (minor in Computer Science and Artificial Intelligence, GPA 3.6) graduating **May 2028**, and he's done three software engineering internships so far.
 
 What he actually works on:
 ${bulletList([
@@ -84,10 +84,11 @@ const impactAnswer = () =>
   `Some numbers he's shipped:
 
 ${bulletList([
-  "**6 KB → 400 bytes** RabbitMQ event payloads",
-  "**1,001 → 2** database queries for 1,000-subscriber preference lookups",
-  "**20–50 ms → <5 ms** unread-notification reads (distributed Redis cache)",
   "**100K** concurrent users on the Sharedi.io notification engine",
+  "**5K events/sec** through Kafka pipelines, fanning out to up to 500 recipients per event",
+  "**90%** lower unread-count lookup latency (distributed Redis cache + Pub/Sub)",
+  "**95%** of notifications delivered within 200 ms via WebSocket",
+  "**<30s** crash recovery with no lost or duplicate messages (Kafka replay + idempotent processing)",
   "**4x** NLP throughput (15K → 60K articles/day via Kafka + parallel Python workers)",
   "**5h → 1h** batch processing and **2.5s → 1.5s** query latency at MeLa Lab",
   "**10h → 2h** GPU training via adaptive batch sizing and memory management",
